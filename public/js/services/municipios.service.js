@@ -3,11 +3,11 @@
 
     angular
         .module('MyApp')
-        .factory('MunicipiosService', MunicipiosService);
+        .factory('MunicipioService', MunicipioService);
 
-    MunicipiosService.$inject = ['$http', '$window', '$rootScope'];
+    MunicipioService.$inject = ['$http', '$window', '$rootScope'];
 
-    function MunicipiosService($http, $window, $rootScope) {
+    function MunicipioService($http, $window, $rootScope) {
         var service = {
             find: find,
             findById: findById,

@@ -1,5 +1,5 @@
 <div>
-    <div ng-controller="CidadeFormController as vm">
+    <div ng-controller="MunicipioFormController as vm">
         <div class="container">
             <div class="panel">
                 <div class="panel-body">
@@ -10,25 +10,25 @@
                             <div class="form-group">
                                 <label for="nome" class="col-sm-2">Nome</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control text-left" ng-model="vm.cidade.nome" id="nome">
+                                    <input type="text" class="form-control text-left" ng-model="vm.municipio.nome" id="nome">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="populacao" class="col-sm-2">População</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control text-left" ng-model="vm.cidade.populacao" id="populacao">
+                                    <input type="text" class="form-control text-left" ng-model="vm.municipio.populacao" id="populacao">
                                 </div>
                             </div>
                             <div class="form-group" >
                                 <label for="estado" class="col-sm-2">Estado</label>
                                 <div class="col-sm-8" ng-controller="EstadoListController as estVM">
-                                    <select name="estado" ng-model="vm.cidade.estado.id" class="form-control" id="estado">
+                                    <select name="estado" ng-model="vm.municipio.estado.id" class="form-control" id="estado">
                                         <option ng-repeat="item in estVM.itens" value={{item.id}}>{{item.id}} - {{item.nome}}</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="text-right col-sm-10">
-                                <a href="/cidade" class="btn btn-default btn-lg">Cancelar</a>
+                                <a href="/municipio" class="btn btn-default btn-lg">Cancelar</a>
                                 <button ng-click="vm.salvar()" type="button" class="btn btn-success btn-lg">Salvar</button>
                             </div>
                         </form>

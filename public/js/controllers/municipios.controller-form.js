@@ -3,23 +3,23 @@
 
     angular
         .module("MyApp")
-        .controller("MuncipioFormController", MuncipioFormController);
+        .controller("MunicipioFormController", MunicipioFormController);
 
-    MuncipioFormController.$inject = [
-        "MuncipioService",
+    MunicipioFormController.$inject = [
+        "MunicipioService",
         "$location",
         "$routeParams",
         "$scope",
     ];
 
-    function MuncipioFormController(
-        MuncipioService,
+    function MunicipioFormController(
+        MunicipioService,
         $location,
         $routeParams
     ) {
         var vm = this;
-        vm.muncipio = {};
-        vm.titulo = "Nova Muncipio";
+        vm.municipio = {};
+        vm.titulo = "Novo Município";
         vm.item = null;
         vm.salvar = salvar;
         vm.select = select;
@@ -28,7 +28,7 @@
 
         function activate() {
             if ($routeParams.id) {
-                MuncipioService.findById($routeParams.id).success(function (data) {
+                MunicipioService.findById($routeParams.id).success(function (data) {
                     vm.municipio = data;
                     vm.titulo = "Editando Muncípio";
                 });
@@ -36,8 +36,8 @@
         }
 
         function salvar() {
-            MuncipioService.save(vm.Muncipio).success(function () {
-                $location.path("/muncipios");
+            MunicipioService.save(vm.municipio).success(function () {
+                $location.path("/municipio");
                 alert("Muncípio cadastrado com sucesso!!");
             }).error(function (erro) {
                 alert(JSON.stringify(erro));

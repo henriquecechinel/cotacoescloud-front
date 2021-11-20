@@ -5,11 +5,12 @@
         .module("MyApp")
         .controller("MunicipioListController", MunicipioListController);
 
-        MunicipioListController.$inject = ["MunicipiosService"];
+        MunicipioListController.$inject = ["MunicipioService"];
 
-    function MunicipioListController(MunicipiosService) {
+    function MunicipioListController(MunicipioService) {
         var vm = this;
 
+        
         vm.item = null;
         vm.itens = [];
         vm.busca = "";
@@ -20,13 +21,13 @@
 
         function activate() {
             var query = vm.busca ? { $text: { $search: vm.busca } } : {};
-            MunicipiosService.find(query).then(function(result) {
+            MunicipioService.find(query).then(function(result) {
                 vm.itens = result.data;
             });
         }
 
         function remover(item) {
-            MunicipiosService.remove(item.id).success(function() {
+            MunicipioService.remove(item.id).success(function() {
                 activate();
             });
         }

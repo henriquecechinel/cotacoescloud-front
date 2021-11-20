@@ -36,7 +36,7 @@
 
         function salvar() {
             EstadoService.save(vm.cadastro).success(function () {
-                $location.path("/estados");
+                $location.path("/estado");
                 alert("Estado cadastrada com sucesso!!");
             }).error(function (erro) {
                 alert(JSON.stringify(erro));

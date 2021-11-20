@@ -18,11 +18,11 @@
         }
 
         function municipiosPage() {
-            $location.path("/municipios");
+            $location.path("/municipio");
         }
 
         function estadosPage() {
-            $location.path("/estados");
+            $location.path("/estado");
         }
     }
 })();
