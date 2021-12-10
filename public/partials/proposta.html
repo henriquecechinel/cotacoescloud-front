@@ -1,0 +1,68 @@
+<div ng-controller="PropostaListController as vm">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h3>Cadastro de Propostas </h3>
+                            </div>
+                            <div class="col-sm-4">
+                                <a class="btn btn-default pull-right btn-lg" href="proposta/new">
+                                    <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                                    <span>Nova Proposta</span>
+                                </a>
+                            </div>
+                        </div>
+                        <form class="search" style="position: absolute; margin-top: -1%;">
+                            <input class="searchTerm" ng-model="vm.busca" placeholder="Pesquisar..." />
+                            <input class="searchButton" text="Buscar" type="submit" ng-click="vm.buscar()" />
+                        </form>
+                        <table class="table" style="margin-top: 3em">
+                            <thead>
+                                <tr>
+                                    <th>Número do item</th>
+                                    <th>Descrição do item</th>
+                                    <th>Marca</th>
+                                    <th>Quantidade</th>
+                                    <th>Valor unitário</th>
+                                    <th>Valor total</th>
+                                    <th>Situação</th>
+                                    <th>Ordem classificação</th>
+                                    <th>Data validade proposta</th>
+                                    <th>Prazo preenchimento</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in vm.itens">
+                                    <td>{{item.numeroItem}}</td>
+                                    <td>{{item.descricaoItem}}</td>
+                                    <td>{{item.marca}}</td>
+                                    <td>{{item.quantidade}}</td>
+                                    <td>{{item.valorUnitario}}</td>
+                                    <td>{{item.valorTotal}}</td>
+                                    <td>{{item.situacao}}</td>
+                                    <td>{{item.ordemClassificacao}}</td>
+                                    <td>{{item.prazoValidadeProposta}}</td>
+                                    <td>{{item.prazoPreenchimento}}</td>
+                                    <td>
+                                        <a type="button" class="btn btn-primary btn-sm" ng-href="{{'/proposta/' + item.id}}">
+                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        </a>
+
+                                        <a type="button" class="btn btn-primary btn-sm" confirmed-click="vm.remover(item)" 
+                                        ng-confirm-click="Deseja excluir a proposta?">
+                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
