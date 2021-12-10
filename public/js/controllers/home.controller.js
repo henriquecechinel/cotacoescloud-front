@@ -9,20 +9,25 @@
         var vm = this;
         var itemSelecionado = -1;
 
-        vm.municipiosPage = municipiosPage;
-        vm.estadosPage = estadosPage;
+        vm.municipiosPage = municipioPage;
+        vm.estadosPage = estadoPage;
+        vm.propostaPage = propostaPage;
 
         activate();
 
         function activate() {
         }
 
-        function municipiosPage() {
+        function municipioPage() {
             $location.path("/municipio");
         }
 
-        function estadosPage() {
+        function estadoPage() {
             $location.path("/estado");
+        }
+
+        function propostaPage() {
+            $location.path("/proposta");
         }
     }
 })();

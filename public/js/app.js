@@ -28,6 +28,15 @@ angular
             .when("/estado/new", {
                 templateUrl: "partials/estado-form.html",
             })
+            .when("/proposta", {
+                templateUrl: "partials/proposta.html",
+            })
+            .when("/proposta/:id", {
+                templateUrl: "partials/proposta-form.html",
+            })
+            .when("/proposta/new", {
+                templateUrl: "partials/proposta-form.html",
+            })
             .otherwise({
                 templateUrl: "partials/404.html",
             });
