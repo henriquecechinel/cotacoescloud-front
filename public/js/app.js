@@ -37,6 +37,15 @@ angular
             .when("/proposta/new", {
                 templateUrl: "partials/proposta-form.html",
             })
+            .when("/participante", {
+                templateUrl: "partials/participante.html",
+            })
+            .when("/participante/:id", {
+                templateUrl: "partials/participante-form.html",
+            })
+            .when("/participante/new", {
+                templateUrl: "partials/participante-form.html",
+            })
             .otherwise({
                 templateUrl: "partials/404.html",
             });

@@ -9,9 +9,18 @@
         var vm = this;
         var itemSelecionado = -1;
 
-        vm.municipiosPage = municipioPage;
-        vm.estadosPage = estadoPage;
-        vm.propostaPage = propostaPage;
+        function inicializaPropriedades() {
+        }
+
+        function inicializaMetodos() {
+            vm.municipiosPage = municipioPage;
+            vm.estadosPage = estadoPage;
+            vm.propostaPage = propostaPage;
+            vm.participantePage = participantePage;
+        }
+
+        inicializaPropriedades();
+        inicializaMetodos();
 
         activate();
 
@@ -28,6 +37,10 @@
 
         function propostaPage() {
             $location.path("/proposta");
+        }
+
+        function participantePage() {
+            $location.path("/participante");
         }
     }
 })();
