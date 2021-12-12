@@ -8,7 +8,6 @@
     EstadoListController.$inject = ["EstadoService"];
 
     function EstadoListController(EstadoService) {
-
         var vm = this;
 
         vm.item = null;
